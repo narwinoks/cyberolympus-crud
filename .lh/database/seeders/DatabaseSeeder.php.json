@@ -1,0 +1,50 @@
+{
+    "sourceFile": "database/seeders/DatabaseSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1666594666071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666594674127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     public function run()\n     {\n         // \\App\\Models\\User::factory(10)->create();\n \n-        \n+        $this->call(Users)\n         // \\App\\Models\\User::factory()->create([\n         //     'name' => 'Test User',\n         //     'email' => 'test@example.com',\n         // ]);\n"
+                },
+                {
+                    "date": 1666594681844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     public function run()\n     {\n         // \\App\\Models\\User::factory(10)->create();\n \n-        $this->call(Users)\n+        $this->call(UserSeeder::class);\n         // \\App\\Models\\User::factory()->create([\n         //     'name' => 'Test User',\n         //     'email' => 'test@example.com',\n         // ]);\n"
+                },
+                {
+                    "date": 1666595524196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     public function run()\n     {\n         // \\App\\Models\\User::factory(10)->create();\n \n-        $this->call(UserSeeder::class);\n+        $this->call()\n         // \\App\\Models\\User::factory()->create([\n         //     'name' => 'Test User',\n         //     'email' => 'test@example.com',\n         // ]);\n"
+                },
+                {
+                    "date": 1666595530634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     public function run()\n     {\n         // \\App\\Models\\User::factory(10)->create();\n \n-        $this->call()\n+        $this->call([UserSeeder::C])\n         // \\App\\Models\\User::factory()->create([\n         //     'name' => 'Test User',\n         //     'email' => 'test@example.com',\n         // ]);\n"
+                },
+                {
+                    "date": 1666597340568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n      */\n     public function run()\n     {\n         // \\App\\Models\\User::factory(10)->create();\n-\n-        $this->call([UserSeeder::C])\n+        \n+        $this->call([UserSeeder::class]);\n         // \\App\\Models\\User::factory()->create([\n         //     'name' => 'Test User',\n         //     'email' => 'test@example.com',\n         // ]);\n"
+                },
+                {
+                    "date": 1666597346112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,10 @@\n \n namespace Database\\Seeders;\n \n // use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n+\n+use App\\Models\\Customer;\n use Illuminate\\Database\\Seeder;\n \n class DatabaseSeeder extends Seeder\n {\n@@ -14,9 +16,9 @@\n      */\n     public function run()\n     {\n         // \\App\\Models\\User::factory(10)->create();\n-        \n+        Customer::create\n         $this->call([UserSeeder::class]);\n         // \\App\\Models\\User::factory()->create([\n         //     'name' => 'Test User',\n         //     'email' => 'test@example.com',\n"
+                },
+                {
+                    "date": 1666597351782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function run()\n     {\n         // \\App\\Models\\User::factory(10)->create();\n-        Customer::create\n+        Customer::factory(100);\n         $this->call([UserSeeder::class]);\n         // \\App\\Models\\User::factory()->create([\n         //     'name' => 'Test User',\n         //     'email' => 'test@example.com',\n"
+                },
+                {
+                    "date": 1666617422591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n      */\n     public function run()\n     {\n         // \\App\\Models\\User::factory(10)->create();\n-        Customer::factory(100);\n+        Customer::factory(20)->create();\n         $this->call([UserSeeder::class]);\n         // \\App\\Models\\User::factory()->create([\n         //     'name' => 'Test User',\n         //     'email' => 'test@example.com',\n"
+                }
+            ],
+            "date": 1666594666071,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\n// use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass DatabaseSeeder extends Seeder\n{\n    /**\n     * Seed the application's database.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        // \\App\\Models\\User::factory(10)->create();\n\n        \n        // \\App\\Models\\User::factory()->create([\n        //     'name' => 'Test User',\n        //     'email' => 'test@example.com',\n        // ]);\n    }\n}\n"
+        }
+    ]
+}

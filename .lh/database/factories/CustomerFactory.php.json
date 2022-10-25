@@ -1,0 +1,74 @@
+{
+    "sourceFile": "database/factories/CustomerFactory.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1666597195034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666597204493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,8 @@\n      */\n     public function definition()\n     {\n         return [\n-            'name'\n+            'name'=>$this->fa\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597210775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,8 @@\n      */\n     public function definition()\n     {\n         return [\n-            'name'=>$this->fa\n+            'name'=>$this->faker->name(),\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597234608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,7 +17,8 @@\n     public function definition()\n     {\n         return [\n             'name'=>$this->faker->name(),\n+            'address'=>$this->faker->address\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597240245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n     public function definition()\n     {\n         return [\n             'name'=>$this->faker->name(),\n-            'address'=>$this->faker->address\n+            'address'=>$this->faker->address(),\n+            'not_'\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597248054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n     {\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n-            'not_'\n+            'not_tlp' =>$this->faker->nottlp(),\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597274677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n     {\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n-            'not_tlp' =>$this->faker->nottlp(),\n+            'not_tlp' =>'081548726',\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597280272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n     {\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n-            'not_tlp' =>'081548726',\n+            'not_tlp' =>$this->faker->,\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597286725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n     {\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n-            'not_tlp' =>$this->faker->,\n+            'not_tlp' =>$this->faker->phoneNumber(),\n+            ''\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597294022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n             'not_tlp' =>$this->faker->phoneNumber(),\n-            ''\n+            'resitrasi_at'\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597310114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n             'not_tlp' =>$this->faker->phoneNumber(),\n-            'resitrasi_at'\n+            'registrasi'=>$this->faker->\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597315636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n             'not_tlp' =>$this->faker->phoneNumber(),\n-            'registrasi'=>$this->faker->\n+            'regis_at'=>$this->faker->\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597331210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n             'not_tlp' =>$this->faker->phoneNumber(),\n-            'regis_at'=>$this->faker->\n+            'regis_at'=>$this->faker->date()\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597400436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n-            'not_tlp' =>$this->faker->phoneNumber(),\n+            'no_tlp' =>$this->faker->phoneNumber(),\n             'regis_at'=>$this->faker->date()\n         ];\n     }\n }\n"
+                },
+                {
+                    "date": 1666597464194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     {\n         return [\n             'name'=>$this->faker->name(),\n             'address'=>$this->faker->address(),\n-            'no_tlp' =>$this->faker->phoneNumber(),\n+            'no_tlp' =>'0856236748434',\n             'regis_at'=>$this->faker->date()\n         ];\n     }\n }\n"
+                }
+            ],
+            "date": 1666597195034,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Factories;\n\nuse Illuminate\\Database\\Eloquent\\Factories\\Factory;\n\n/**\n * @extends \\Illuminate\\Database\\Eloquent\\Factories\\Factory<\\App\\Models\\Customer>\n */\nclass CustomerFactory extends Factory\n{\n    /**\n     * Define the model's default state.\n     *\n     * @return array<string, mixed>\n     */\n    public function definition()\n    {\n        return [\n            'name'\n        ];\n    }\n}\n"
+        }
+    ]
+}

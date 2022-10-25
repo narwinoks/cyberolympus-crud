@@ -1,0 +1,146 @@
+{
+    "sourceFile": "database/seeders/UserSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 32,
+            "patches": [
+                {
+                    "date": 1666594384286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666594402727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,9 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $user=User::created()\n+        $user=User::create([\n+            'admins' =>\n+        ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594408205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n      */\n     public function run()\n     {\n         $user=User::create([\n-            'admins' =>\n+            'admin' =>'narnowin'\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594416977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n      */\n     public function run()\n     {\n         $user=User::create([\n-            'admin' =>'narnowin'\n+            'admin' =>'admin195@gmail.com',\n+            ''\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594426486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n      */\n     public function run()\n     {\n         $user=User::create([\n-            'admin' =>'admin195@gmail.com',\n+            'email' =>'admin195@gmail.com',\n             ''\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594436093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n      */\n     public function run()\n     {\n         $user=User::create([\n+            'name'=>'admin'\n             'email' =>'admin195@gmail.com',\n-            ''\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594454689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,10 @@\n      */\n     public function run()\n     {\n         $user=User::create([\n-            'name'=>'admin'\n+            'name'=>'admin',\n             'email' =>'admin195@gmail.com',\n+            'email_verified_at'\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594460574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n     {\n         $user=User::create([\n             'name'=>'admin',\n             'email' =>'admin195@gmail.com',\n-            'email_verified_at'\n+            'email_verified_at'=>now(),\n+            \n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594467056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n         $user=User::create([\n             'name'=>'admin',\n             'email' =>'admin195@gmail.com',\n             'email_verified_at'=>now(),\n-            \n+            'password'\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594476183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n         $user=User::create([\n             'name'=>'admin',\n             'email' =>'admin195@gmail.com',\n             'email_verified_at'=>now(),\n-            'password'\n+            'password'=>Hash\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594483285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n use App\\Models\\User;\n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n+use Illuminate\\Support\\Facades\\Hash;\n \n class UserSeeder extends Seeder\n {\n     /**\n@@ -18,8 +19,8 @@\n         $user=User::create([\n             'name'=>'admin',\n             'email' =>'admin195@gmail.com',\n             'email_verified_at'=>now(),\n-            'password'=>Hash\n+            'password'=>Hash::make('password')\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594506374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n         $user=User::create([\n             'name'=>'admin',\n             'email' =>'admin195@gmail.com',\n             'email_verified_at'=>now(),\n-            'password'=>Hash::make('password')\n+            'password'=>Hash::make('password'),\n+            'profile_photo_path'\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594546342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n             'name'=>'admin',\n             'email' =>'admin195@gmail.com',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n-            'profile_photo_path'\n+            'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594558448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,8 @@\n             'name'=>'admin',\n             'email' =>'admin195@gmail.com',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n-            'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'\n+            'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594601787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,13 @@\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n+        $user=User::create([\n+            'name'=>'admin cyber',\n+            'email' =>'admin195@gmail.com',\n+            'email_verified_at'=>now(),\n+            'password'=>Hash::make('password'),\n+            'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n+        ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594607489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n             'password'=>Hash::make('password'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n         $user=User::create([\n-            'name'=>'admin cyber',\n+            'name'=>'admin cyberolympus',\n             'email' =>'admin195@gmail.com',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n"
+                },
+                {
+                    "date": 1666594613640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n         $user=User::create([\n             'name'=>'admin cyberolympus',\n-            'email' =>'admin195@gmail.com',\n+            'email' =>'admin',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n"
+                },
+                {
+                    "date": 1666594632226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n         $user=User::create([\n             'name'=>'admin cyberolympus',\n-            'email' =>'admin',\n+            'email' =>'admincyberlym[us',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n"
+                },
+                {
+                    "date": 1666594638300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n         $user=User::create([\n             'name'=>'admin cyberolympus',\n-            'email' =>'admincyberlym[us',\n+            'email' =>'admincyberolypus',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n"
+                },
+                {
+                    "date": 1666594646113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n         $user=User::create([\n             'name'=>'admin cyberolympus',\n-            'email' =>'admincyberolypus',\n+            'email' =>'admincyberolypus.com',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n"
+                },
+                {
+                    "date": 1666594660143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         $user=User::create([\n             'name'=>'admin cyberolympus',\n             'email' =>'admincyberolypus.com',\n             'email_verified_at'=>now(),\n-            'password'=>Hash::make('password'),\n+            'password'=>Hash::make('cyberadmin'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n     }\n }\n"
+                },
+                {
+                    "date": 1666594708765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     public function run()\n     {\n         $user=User::create([\n             'name'=>'admin',\n-            'email' =>'admin195@gmail.com',\n+            'email' =>'admin@gmail.com',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n"
+                },
+                {
+                    "date": 1666594791422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n             'name'=>'admin',\n             'email' =>'admin@gmail.com',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n+            'current_team_id'\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n         $user=User::create([\n             'name'=>'admin cyberolympus',\n"
+                },
+                {
+                    "date": 1666594797983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,15 +20,16 @@\n             'name'=>'admin',\n             'email' =>'admin@gmail.com',\n             'email_verified_at'=>now(),\n             'password'=>Hash::make('password'),\n-            'current_team_id'\n+            'current_team_id'=>'admin',\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n         $user=User::create([\n             'name'=>'admin cyberolympus',\n             'email' =>'admincyberolypus.com',\n             'email_verified_at'=>now(),\n+            'current_team_id'\n             'password'=>Hash::make('cyberadmin'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n     }\n"
+                },
+                {
+                    "date": 1666594803525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n         $user=User::create([\n             'name'=>'admin cyberolympus',\n             'email' =>'admincyberolypus.com',\n             'email_verified_at'=>now(),\n-            'current_team_id'\n+            'current_team_id'=>'admin',\n             'password'=>Hash::make('cyberadmin'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n     }\n"
+                },
+                {
+                    "date": 1666594899884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n         $user=User::create([\n             'name'=>'admin cyberolympus',\n             'email' =>'admincyberolypus.com',\n             'email_verified_at'=>now(),\n-            'current_team_id'=>'admin',\n+            // 'current_team_id'=>'admin',\n             'password'=>Hash::make('cyberadmin'),\n             'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n         ]);\n     }\n"
+                },
+                {
+                    "date": 1666595394796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,10 @@\n <?php\n \n namespace Database\\Seeders;\n \n-use App\\Models\\User;\n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n-use Illuminate\\Support\\Facades\\Hash;\n \n class UserSeeder extends Seeder\n {\n     /**\n@@ -15,22 +13,7 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $user=User::create([\n-            'name'=>'admin',\n-            'email' =>'admin@gmail.com',\n-            'email_verified_at'=>now(),\n-            'password'=>Hash::make('password'),\n-            'current_team_id'=>'admin',\n-            'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n-        ]);\n-        $user=User::create([\n-            'name'=>'admin cyberolympus',\n-            'email' =>'admincyberolypus.com',\n-            'email_verified_at'=>now(),\n-            // 'current_team_id'=>'admin',\n-            'password'=>Hash::make('cyberadmin'),\n-            'profile_photo_path'=>'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',\n-        ]);\n+        $use\n     }\n }\n"
+                },
+                {
+                    "date": 1666595406672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace Database\\Seeders;\n \n+use App\\Models\\User;\n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n \n class UserSeeder extends Seeder\n@@ -13,7 +14,7 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $use\n+        $user=User::create()\n     }\n }\n"
+                },
+                {
+                    "date": 1666595411765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,7 +14,9 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $user=User::create()\n+        $user=User::create([\n+            'name'\n+        ])\n     }\n }\n"
+                },
+                {
+                    "date": 1666595418742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n      */\n     public function run()\n     {\n         $user=User::create([\n-            'name'\n+            'name'=>'admin',\n+            'email'=>'admin@example.com\n         ])\n     }\n }\n"
+                },
+                {
+                    "date": 1666595424331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n     public function run()\n     {\n         $user=User::create([\n             'name'=>'admin',\n-            'email'=>'admin@example.com\n+            'email'=>'admin@example.com',\n+            'password'=>Has\n         ])\n     }\n }\n"
+                },
+                {
+                    "date": 1666595431254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n use App\\Models\\User;\n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n+use Illuminate\\Support\\Facades\\Hash;\n \n class UserSeeder extends Seeder\n {\n     /**\n@@ -17,8 +18,8 @@\n     {\n         $user=User::create([\n             'name'=>'admin',\n             'email'=>'admin@example.com',\n-            'password'=>Has\n+            'password'=>Hash::make('password')\n         ])\n     }\n }\n"
+                },
+                {
+                    "date": 1666595563363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     public function run()\n     {\n         $user=User::create([\n             'name'=>'admin',\n-            'email'=>'admin@example.com',\n+            'email'=>'admin@.com',\n             'password'=>Hash::make('password')\n-        ])\n+        ]);\n     }\n }\n"
+                }
+            ],
+            "date": 1666594384286,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse App\\Models\\User;\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass UserSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        $user=User::created()\n    }\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,126 @@
+{
+    "sourceFile": "app/Http/Controllers/CustomerController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 27,
+            "patches": [
+                {
+                    "date": 1666596482581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666597016120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        return view('customer.index')\n+        $customer=Customer\n+        return view('customer.index');\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1666597023111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $customer=Customer\n+        $customer=Customer::paginate(10)\n         return view('customer.index');\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666597045224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $customer=Customer::paginate(10)\n+        $customer=Customer::paginate(10);\n         return view('customer.index');\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1666597051438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n      */\n     public function index()\n     {\n         $customer=Customer::paginate(10);\n-        return view('customer.index');\n+        return view('customer.index',com);\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1666597057416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n      */\n     public function index()\n     {\n         $customer=Customer::paginate(10);\n-        return view('customer.index',com);\n+        return view('customer.index',compact('customer'));\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1666597119748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n         $customer=Customer::paginate(10);\n         return view('customer.index',compact('customer'));\n     }\n \n+    public function\n     /**\n      * Show the form for creating a new resource.\n      *\n      * @return \\Illuminate\\Http\\Response\n"
+                },
+                {
+                    "date": 1666597125451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,13 @@\n     {\n         $customer=Customer::paginate(10);\n         return view('customer.index',compact('customer'));\n     }\n+    public function index()\n+    {\n+        $customer=Customer::paginate(10);\n+        return view('customer.index',compact('customer'));\n+    }\n \n     public function\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1666597134358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,15 +17,15 @@\n     {\n         $customer=Customer::paginate(10);\n         return view('customer.index',compact('customer'));\n     }\n-    public function index()\n+    public function inex()\n     {\n         $customer=Customer::paginate(10);\n-        return view('customer.index',compact('customer'));\n+      \n     }\n \n-    public function\n+  \n     /**\n      * Show the form for creating a new resource.\n      *\n      * @return \\Illuminate\\Http\\Response\n"
+                },
+                {
+                    "date": 1666597142085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,12 @@\n     {\n         $customer=Customer::paginate(10);\n         return view('customer.index',compact('customer'));\n     }\n-    public function inex()\n+    public function table()\n     {\n         $customer=Customer::paginate(10);\n-      \n+      return $customer;\n     }\n \n   \n     /**\n"
+                },
+                {
+                    "date": 1666597178399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,15 +14,15 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        $customer=Customer::paginate(10);\n+        // $customer=Customer::paginate(10);\n         return view('customer.index',compact('customer'));\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10);\n-      return $customer;\n+        return $customer;\n     }\n \n   \n     /**\n"
+                },
+                {
+                    "date": 1666597184316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n      */\n     public function index()\n     {\n         // $customer=Customer::paginate(10);\n-        return view('customer.index',compact('customer'));\n+        return view('customer.index');\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10);\n"
+                },
+                {
+                    "date": 1666599185886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10);\n+        \n         return $customer;\n     }\n \n   \n"
+                },
+                {
+                    "date": 1666599195534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10);\n-        \n         return $customer;\n     }\n \n   \n"
+                },
+                {
+                    "date": 1666599201313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10);\n-        return $customer;\n+        return $customer->js;\n     }\n \n   \n     /**\n"
+                },
+                {
+                    "date": 1666599212011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10);\n-        return $customer->js;\n+        json\n+        return $customer;\n     }\n \n   \n     /**\n"
+                },
+                {
+                    "date": 1666599224472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10);\n-        json\n+        json_encode($customer)\n         return $customer;\n     }\n \n   \n"
+                },
+                {
+                    "date": 1666599241180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,10 @@\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10);\n-        json_encode($customer)\n+        // json_encode($customer);\n+        \n         return $customer;\n     }\n \n   \n"
+                },
+                {
+                    "date": 1666599253376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,10 @@\n     public function table()\n     {\n         $customer=Customer::paginate(10);\n         // json_encode($customer);\n-        \n-        return $customer;\n+\n+        return response();\n     }\n \n   \n     /**\n"
+                },
+                {
+                    "date": 1666599258714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     {\n         $customer=Customer::paginate(10);\n         // json_encode($customer);\n \n-        return response();\n+        return response()->json();\n     }\n \n   \n     /**\n"
+                },
+                {
+                    "date": 1666608580646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,12 @@\n         return view('customer.index');\n     }\n     public function table()\n     {\n-        $customer=Customer::paginate(10);\n+        $customer=Customer::paginate(10)->pa;\n         // json_encode($customer);\n \n-        return response()->json();\n+        return response()->json($customer);\n     }\n \n   \n     /**\n"
+                },
+                {
+                    "date": 1666608585762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         return view('customer.index');\n     }\n     public function table()\n     {\n-        $customer=Customer::paginate(10)->pa;\n+        $customer=Customer::paginate(10)->page;\n         // json_encode($customer);\n \n         return response()->json($customer);\n     }\n"
+                },
+                {
+                    "date": 1666614602599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         return view('customer.index');\n     }\n     public function table()\n     {\n-        $customer=Customer::paginate(10)->page;\n+        $customer=Customer::paginate(10)->url();\n         // json_encode($customer);\n \n         return response()->json($customer);\n     }\n"
+                },
+                {
+                    "date": 1666615781061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,15 @@\n      * @return \\Illuminate\\Http\\Response\n      */\n     public function index()\n     {\n-        // $customer=Customer::paginate(10);\n+        \n+        $customer=Customer::paginate(10);\n         return view('customer.index');\n     }\n     public function table()\n     {\n-        $customer=Customer::paginate(10)->url();\n+        $customer=Customer::paginate(10)->url(2);\n         // json_encode($customer);\n \n         return response()->json($customer);\n     }\n"
+                },
+                {
+                    "date": 1666615790073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     public function index()\n     {\n         \n         $customer=Customer::paginate(10);\n-        return view('customer.index');\n+        return view('customer.index',com);\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10)->url(2);\n"
+                },
+                {
+                    "date": 1666615871468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     public function index()\n     {\n         \n         $customer=Customer::paginate(10);\n-        return view('customer.index',com);\n+        return view('customer.index');\n     }\n     public function table()\n     {\n         $customer=Customer::paginate(10)->url(2);\n"
+                },
+                {
+                    "date": 1666621539181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         // $customer=Customer::paginate(10);\n         return view('customer.index');\n     }\n   \n-  \n+\n     /**\n      * Show the form for creating a new resource.\n      *\n      * @return \\Illuminate\\Http\\Response\n"
+                },
+                {
+                    "date": 1666658082468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,101 @@\n+<?php\n+\n+namespace App\\Http\\Controllers;\n+\n+use App\\Http\\Requests\\StoreCustomerRequest;\n+use App\\Http\\Requests\\UpdateCustomerRequest;\n+use App\\Models\\Customer;\n+\n+class CustomerController extends Controller\n+{\n+    /**\n+     * Display a listing of the resource.\n+     *\n+     * @return \\Illuminate\\Http\\Response\n+     */\n+    public function index()\n+    {\n+        $output=\"\";\n+$products=DB::table('products')->where('title','LIKE','%'.$request->search.\"%\")->get();\n+if($products)\n+{\n+foreach ($products as $key => $product) {\n+$output.='<tr>'.\n+'<td>'.$product->id.'</td>'.\n+'<td>'.$product->title.'</td>'.\n+'<td>'.$product->description.'</td>'.\n+'<td>'.$product->price.'</td>'.\n+'</tr>';\n+        // $customer=Customer::paginate(10);\n+        return view('customer.index');\n+    }\n+    /**\n+     * Show the form for creating a new resource.\n+     *\n+     * @return \\Illuminate\\Http\\Response\n+     */\n+    public function create()\n+    {\n+        //\n+    }\n+\n+    /**\n+     * Store a newly created resource in storage.\n+     *\n+     * @param  \\App\\Http\\Requests\\StoreCustomerRequest  $request\n+     * @return \\Illuminate\\Http\\Response\n+     */\n+    public function store(StoreCustomerRequest $request)\n+    {\n+        //\n+    }\n+\n+    /**\n+     * Display the specified resource.\n+     *\n+     * @param  \\App\\Models\\Customer  $customer\n+     * @return \\Illuminate\\Http\\Response\n+     */\n+    public function show(Customer $customer)\n+    {\n+        //\n+    }\n+\n+    /**\n+     * Show the form for editing the specified resource.\n+     *\n+     * @param  \\App\\Models\\Customer  $customer\n+     * @return \\Illuminate\\Http\\Response\n+     */\n+    public function edit(Customer $customer)\n+    {\n+        //\n+    }\n+\n+    /**\n+     * Update the specified resource in storage.\n+     *\n+     * @param  \\App\\Http\\Requests\\UpdateCustomerRequest  $request\n+     * @param  \\App\\Models\\Customer  $customer\n+     * @return \\Illuminate\\Http\\Response\n+     */\n+    public function update(UpdateCustomerRequest $request, Customer $customer)\n+    {\n+        //\n+    }\n+\n+    /**\n+     * Remove the specified resource from storage.\n+     *\n+     * @param  \\App\\Models\\Customer  $customer\n+     * @return \\Illuminate\\Http\\Response\n+     */\n+    public function destroy($id)\n+    {\n+       $customer= Customer::find($id);\n+       $customer->delete();\n+        return response()->json([\n+            'success' => 'Record deleted successfully!'\n+        ]);\n+    }\n+}\n"
+                }
+            ],
+            "date": 1666596482581,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Http\\Requests\\StoreCustomerRequest;\nuse App\\Http\\Requests\\UpdateCustomerRequest;\nuse App\\Models\\Customer;\n\nclass CustomerController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function index()\n    {\n        return view('customer.index')\n    }\n\n    /**\n     * Show the form for creating a new resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function create()\n    {\n        //\n    }\n\n    /**\n     * Store a newly created resource in storage.\n     *\n     * @param  \\App\\Http\\Requests\\StoreCustomerRequest  $request\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function store(StoreCustomerRequest $request)\n    {\n        //\n    }\n\n    /**\n     * Display the specified resource.\n     *\n     * @param  \\App\\Models\\Customer  $customer\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function show(Customer $customer)\n    {\n        //\n    }\n\n    /**\n     * Show the form for editing the specified resource.\n     *\n     * @param  \\App\\Models\\Customer  $customer\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function edit(Customer $customer)\n    {\n        //\n    }\n\n    /**\n     * Update the specified resource in storage.\n     *\n     * @param  \\App\\Http\\Requests\\UpdateCustomerRequest  $request\n     * @param  \\App\\Models\\Customer  $customer\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function update(UpdateCustomerRequest $request, Customer $customer)\n    {\n        //\n    }\n\n    /**\n     * Remove the specified resource from storage.\n     *\n     * @param  \\App\\Models\\Customer  $customer\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function destroy(Customer $customer)\n    {\n        //\n    }\n}\n"
+        }
+    ]
+}

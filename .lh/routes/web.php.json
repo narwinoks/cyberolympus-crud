@@ -1,0 +1,198 @@
+{
+    "sourceFile": "routes/web.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 45,
+            "patches": [
+                {
+                    "date": 1666596208874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666596213968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,5 +25,5 @@\n     Route::get('/dashboard', function () {\n         return view('dashboard');\n     })->name('dashboard');\n });\n-Route::\n\\ No newline at end of file\n+Route::get('')\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666596220515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,5 +25,5 @@\n     Route::get('/dashboard', function () {\n         return view('dashboard');\n     })->name('dashboard');\n });\n-Route::get('')\n\\ No newline at end of file\n+Route::get('customers',[])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666596230604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <?php\n \n+use App\\Http\\Controllers\\CustomerController;\n use Illuminate\\Support\\Facades\\Route;\n \n /*\n |--------------------------------------------------------------------------\n@@ -25,5 +26,5 @@\n     Route::get('/dashboard', function () {\n         return view('dashboard');\n     })->name('dashboard');\n });\n-Route::get('customers',[])\n\\ No newline at end of file\n+Route::get('customers',[CustomerController::class])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666596235696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,5 @@\n     Route::get('/dashboard', function () {\n         return view('dashboard');\n     })->name('dashboard');\n });\n-Route::get('customers',[CustomerController::class])\n\\ No newline at end of file\n+Route::get('customers',[CustomerController::class,'index']);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1666596245300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,5 @@\n     Route::get('/dashboard', function () {\n         return view('dashboard');\n     })->name('dashboard');\n });\n-Route::get('customers',[CustomerController::class,'index']);\n\\ No newline at end of file\n+Route::get('customers',[CustomerController::class,'index']);\n"
+                },
+                {
+                    "date": 1666597074520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,5 @@\n     Route::get('/dashboard', function () {\n         return view('dashboard');\n     })->name('dashboard');\n });\n-Route::get('customers',[CustomerController::class,'index']);\n+Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n"
+                },
+                {
+                    "date": 1666597092589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,4 +27,5 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n+Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n"
+                },
+                {
+                    "date": 1666597100876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n+Route::get('customer-table',[CustomerController::class,'index'])->name('customer.index');\n"
+                },
+                {
+                    "date": 1666597107805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::get('customer-table',[CustomerController::class,'index'])->name('customer.index');\n+Route::get('customer/table',[CustomerController::class,'table'])->name('customer.index');\n"
+                },
+                {
+                    "date": 1666611345778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,6 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::get('customer/table',[CustomerController::class,'table'])->name('customer.index');\n+Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n+Route::cont\n"
+                },
+                {
+                    "date": 1666611353920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n \n use App\\Http\\Controllers\\CustomerController;\n+use App\\Http\\Controllers\\Datacontroller;\n use Illuminate\\Support\\Facades\\Route;\n \n /*\n |--------------------------------------------------------------------------\n@@ -28,5 +29,5 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n-Route::cont\n+Route::controller(Datacontroller::class)\n"
+                },
+                {
+                    "date": 1666611360071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,5 +29,5 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n-Route::controller(Datacontroller::class)\n+Route::controller(Datacontroller::class)->group(function)\n"
+                },
+                {
+                    "date": 1666611365666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,5 +29,7 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n-Route::controller(Datacontroller::class)->group(function)\n+Route::controller(Datacontroller::class)->group(function(){\n+    \n+});\n"
+                },
+                {
+                    "date": 1666611375763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,5 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n-Route::controller(Datacontroller::class)->group(function(){\n-    \n-});\n+Route::controller(Datacontroller::class)\n"
+                },
+                {
+                    "date": 1666611383787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,5 +29,5 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n-Route::controller(Datacontroller::class)\n+Route::controller(Datacontroller::class)->prefix('data')->group(fun)\n"
+                },
+                {
+                    "date": 1666611389729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,5 +29,7 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n-Route::controller(Datacontroller::class)->prefix('data')->group(fun)\n+Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n+    \n+});\n"
+                },
+                {
+                    "date": 1666611398430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n-    \n+    Route::get('/dashboard', 'cus'\n });\n"
+                },
+                {
+                    "date": 1666611403792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n-    Route::get('/dashboard', 'cus'\n+    Route::get('/dashboard', 'customers')\n });\n"
+                },
+                {
+                    "date": 1666611411803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n-    Route::get('/dashboard', 'customers')\n+    Route::get('/customers', 'customers');\n });\n"
+                },
+                {
+                    "date": 1666611773476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n-    Route::get('/customers', 'customers');\n+    Route::get('/customers', 'customers')->name();\n });\n"
+                },
+                {
+                    "date": 1666611779667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n-    Route::get('/customers', 'customers')->name();\n+    Route::get('/customers', 'customers')->name('customer.index');\n });\n"
+                },
+                {
+                    "date": 1666611784846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,6 @@\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n-    Route::get('/customers', 'customers')->name('customer.index');\n+    Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666621600616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n+Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666621608480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n+Route::get('customers',[CustomerController::class,'destroy'])->name('customer.index');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666621613925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::get('customers',[CustomerController::class,'destroy'])->name('customer.index');\n+Route::get('de',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666621619029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::get('de',[CustomerController::class,'destroy'])->name('customer.destroy');\n+Route::dle('delete',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666656174988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,8 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::dle('delete',[CustomerController::class,'destroy'])->name('customer.destroy');\n-Route::get('customer/table',[CustomerController::class,'table'])->name('customer.table');\n+Route::delete('delete/{}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666660552706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,8 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::delete('delete/{}',[CustomerController::class,'destroy'])->name('customer.destroy');\n+Route::delete('customers/delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666660632129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,8 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::delete('customers/delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n+Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666661300244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n+Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666661307539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n+Route::get('customers',[CustomerController::class,'create'])->name('customer.create');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666662604637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,10 @@\n         return view('dashboard');\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n-Route::get('customers',[CustomerController::class,'create'])->name('customer.create');\n+Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n+Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666662609802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n-Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n+Route::post('create',[CustomerController::class,'create'])->name('customer.create');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666663019517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n-Route::post('create',[CustomerController::class,'create'])->name('customer.create');\n+Route::post('create',[CustomerController::class,'store'])->name('customer.store');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666663136763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n-Route::post('create',[CustomerController::class,'store'])->name('customer.store');\n+Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666664118289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,9 @@\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n+Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666664126203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,10 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n+Route::get('edit/{}',[CustomerController::class,'create'])->name('customer.create');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n-Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666664134340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n-Route::get('edit/{}',[CustomerController::class,'create'])->name('customer.create');\n+Route::get('edit/{id}',[CustomerController::class,'edit'])->name('customer.create');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n"
+                },
+                {
+                    "date": 1666665027457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,11 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n-Route::get('edit/{id}',[CustomerController::class,'edit'])->name('customer.create');\n+Route::get('edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n+Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666665034659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n Route::get('edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n-Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n+Route::post('ud',[CustomerController::class,'store'])->name('customer.store');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666665044373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n Route::get('edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n-Route::post('ud',[CustomerController::class,'store'])->name('customer.store');\n+Route::post('update',[CustomerController::class,'update'])->name('customer.store');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666665050684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n Route::get('edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n-Route::post('update',[CustomerController::class,'update'])->name('customer.store');\n+Route::p('update',[CustomerController::class,'update'])->name('customer.update');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666665110964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n Route::get('edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n-Route::p('update',[CustomerController::class,'update'])->name('customer.update');\n+Route::post('update',[CustomerController::class,'update'])->name('customer.update');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n Route::controller(Datacontroller::class)->prefix('data')->group(function(){\n     Route::get('/customers', 'customers')->name('customers.data');\n });\n"
+                },
+                {
+                    "date": 1666666136552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n+Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n Route::get('edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n Route::post('update',[CustomerController::class,'update'])->name('customer.update');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n"
+                },
+                {
+                    "date": 1666666142386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     })->name('dashboard');\n });\n Route::get('customers',[CustomerController::class,'index'])->name('customer.index');\n Route::get('create',[CustomerController::class,'create'])->name('customer.create');\n-Route::get('customer/{}',[CustomerController::class,'create'])->name('customer.create');\n+Route::get('customer/{i}',[CustomerController::class,'create'])->name('customer.create');\n Route::get('edit/{id}',[CustomerController::class,'edit'])->name('customer.edit');\n Route::post('store',[CustomerController::class,'store'])->name('customer.store');\n Route::post('update',[CustomerController::class,'update'])->name('customer.update');\n Route::delete('delete/{id}',[CustomerController::class,'destroy'])->name('customer.destroy');\n"
+                }
+            ],
+            "date": 1666596208874,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Route;\n\n/*\n|--------------------------------------------------------------------------\n| Web Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register web routes for your application. These\n| routes are loaded by the RouteServiceProvider within a group which\n| contains the \"web\" middleware group. Now create something great!\n|\n*/\n\nRoute::get('/', function () {\n    return view('welcome');\n});\n\nRoute::middleware([\n    'auth:sanctum',\n    config('jetstream.auth_session'),\n    'verified'\n])->group(function () {\n    Route::get('/dashboard', function () {\n        return view('dashboard');\n    })->name('dashboard');\n});\nRoute::"
+        }
+    ]
+}

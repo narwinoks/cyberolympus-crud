@@ -1,0 +1,34 @@
+{
+    "sourceFile": "app/Http/Controllers/Datacontroller.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1666610681058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1666610686617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,8 @@\n use Illuminate\\Http\\Request;\n \n class Datacontroller extends Controller\n {\n-    public function \n+    public function ccustomers(){\n+        \n+    }\n }\n"
+                },
+                {
+                    "date": 1666610718521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,58 @@\n \n class Datacontroller extends Controller\n {\n     public function ccustomers(){\n-        \n+          ## Read value\n+     $draw = $request->get('draw');\n+     $start = $request->get(\"start\");\n+     $rowperpage = $request->get(\"length\"); // Rows display per page\n+\n+     $columnIndex_arr = $request->get('order');\n+     $columnName_arr = $request->get('columns');\n+     $order_arr = $request->get('order');\n+     $search_arr = $request->get('search');\n+\n+     $columnIndex = $columnIndex_arr[0]['column']; // Column index\n+     $columnName = $columnName_arr[$columnIndex]['data']; // Column name\n+     $columnSortOrder = $order_arr[0]['dir']; // asc or desc\n+     $searchValue = $search_arr['value']; // Search value\n+\n+     // Total records\n+     $totalRecords = Employees::select('count(*) as allcount')->count();\n+     $totalRecordswithFilter = Employees::select('count(*) as allcount')->where('name', 'like', '%' .$searchValue . '%')->count();\n+\n+     // Fetch records\n+     $records = Employees::orderBy($columnName,$columnSortOrder)\n+       ->where('employees.name', 'like', '%' .$searchValue . '%')\n+       ->select('employees.*')\n+       ->skip($start)\n+       ->take($rowperpage)\n+       ->get();\n+\n+     $data_arr = array();\n+     \n+     foreach($records as $record){\n+        $id = $record->id;\n+        $username = $record->username;\n+        $name = $record->name;\n+        $email = $record->email;\n+\n+        $data_arr[] = array(\n+          \"id\" => $id,\n+          \"username\" => $username,\n+          \"name\" => $name,\n+          \"email\" => $email\n+        );\n+     }\n+\n+     $response = array(\n+        \"draw\" => intval($draw),\n+        \"iTotalRecords\" => $totalRecords,\n+        \"iTotalDisplayRecords\" => $totalRecordswithFilter,\n+        \"aaData\" => $data_arr\n+     );\n+\n+     echo json_encode($response);\n+     exit;\n     }\n }\n"
+                },
+                {
+                    "date": 1666610725055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n use Illuminate\\Http\\Request;\n \n class Datacontroller extends Controller\n {\n-    public function ccustomers(Request){\n+    public function ccustomers(Request ){\n           ## Read value\n      $draw = $request->get('draw');\n      $start = $request->get(\"start\");\n      $rowperpage = $request->get(\"length\"); // Rows display per page\n"
+                },
+                {
+                    "date": 1666611454723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n \n class Datacontroller extends Controller\n {\n     public function customers(Request $request){\n-     $data=Customer::all();\n+     $data=Customer::all(;\n     }\n }\n"
+                }
+            ],
+            "date": 1666610681058,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass Datacontroller extends Controller\n{\n    public function \n}\n"
+        }
+    ]
+}
